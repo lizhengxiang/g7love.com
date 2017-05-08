@@ -8,6 +8,7 @@ module:testrunner
 
 
 GET     /                                       App.Index
+GET     /app/:id                                       App.Show
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

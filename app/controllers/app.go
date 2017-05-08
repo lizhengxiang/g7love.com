@@ -9,6 +9,18 @@ type App struct {
 }
 
 func (c App) Index() revel.Result {
-	greeting := "Aloha World"
-	return c.Render(greeting)
+	var q [3]int = [3]int{1, 2, 3}
+	return c.RenderJSON(q)
+}
+
+/*func (c App) Show() revel.Result {
+	parm := c.Params.Get("id")
+	return c.RenderJSON(parm)
+}*/
+
+func (c App) Show() revel.Result {
+	var  id  int
+	c.Params.Bind(&id,"id")
+	//parm := c.Params.Get("id")
+	return c.RenderJSON(id)
 }
